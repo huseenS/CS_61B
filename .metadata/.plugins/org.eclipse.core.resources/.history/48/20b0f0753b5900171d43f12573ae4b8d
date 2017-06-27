@@ -1,0 +1,168 @@
+/**
+ * 
+ */
+package Lab2;
+
+/**
+ * @author Huseen Sufi
+ *Doubly Linked List implementation, accepts generic object
+ */
+public class DList <T>{
+	//empty sentinel Nodes that always point to first/last nodes 
+	private DListNode header; //head sentinel
+	private DListNode trailer; //tail sentinel
+	private int size = 0; //size of node
+		
+	 //Nested inner DListNode class
+		public class DListNode {
+			private DListNode next; //next pointer
+			private DListNode prev; //prev pointer 
+			private T item; // generic Object
+			
+			//constructor 
+			public DListNode(DListNode next, DListNode prev, T item) {
+				this.next = next;
+				this.prev = prev;
+				this.item = item;
+			}
+			
+			//getters
+			public T getItem() {
+				return item;
+			}
+			public DListNode getNext() {
+				return next;
+			}
+			public DListNode getPrev() {
+				return prev;
+			}
+			//setters
+			public void setNext(DListNode next) {
+				this.next = next;
+			}
+			public void setPrev(DListNode prev) {
+				this.prev = prev;
+			}
+			public void setItem(T item) {
+				this.item = item;
+			}
+		
+		} //end DListNode class
+	
+	//DList Default Constructor
+	public DList() {
+		size = 0;
+		header = new DListNode(null, null, null); //empty header
+		trailer = new DListNode(null, null, null); //empty trailer
+		header.setNext(trailer); //make header point to trailer
+		trailer.setPrev(header);
+	}
+	
+	//ListManipulation
+	public int size() {
+		System.out.println(size);
+		return this.size;
+	}
+	public boolean isEmpty() {
+		return size == 0; // if true list is empty
+	}
+	//return head node in constant time
+	public T getFirst() throws IllegalStateException {
+		if (isEmpty()) throw new IllegalStateException("Error List Is Empty");
+			return header.getNext().getItem(); //return sentinel next
+		}
+	
+	//return tail node in constant time
+	public T  getLast() throws IllegalStateException {
+		if (isEmpty()) throw new IllegalStateException("Error List is Empty"); 
+			return trailer.getPrev().getItem();
+		}
+	
+	public T getItem(int index) {
+		DListNode current = getNode(index);
+		return current.getItem();
+	}
+	
+	//Get Node at Specified Index
+	private DListNode getNode(int index) {
+		int count = 0;
+		
+		//list empty or element past bounds
+		if (index < 0  ||  (size <= 0 ||  index > size-1)) {
+			return null;
+		}
+		
+		//always an item in list
+		DListNode current = header.next;
+		while (current.getNext() != null && count < index) {
+			current = current.getNext();
+			count++;
+		}
+		return current;
+	}
+	
+	//add Node at Specified index
+	public void addNode(int index, T toAdd) {
+		DListNode toAddNode = new DListNode(null, null, toAdd);
+	
+		//if list is empty
+		DListNode current = getNode(index);
+		if((getNode(index) == null) && (size == 0)) {
+			toAddNode.setNext(trailer);
+			trailer.setPrev(toAddNode);
+			toAddNode.setPrev(header);
+			header.setNext(toAddNode);
+			size++;
+			//if list index 1
+		}  else if(index == size ) {
+			DListNode prev = trailer.getPrev();
+			prev.setNext(toAddNode);
+			toAddNode.setPrev(prev);
+			toAddNode.setNext(trailer);
+			trailer.setPrev(toAddNode);
+			size++;
+		} else {
+			DListNode prev = current.getPrev();
+			
+			//add node at index
+			current.setPrev(toAddNode);
+			prev.setNext(toAddNode);
+			toAddNode.setPrev(prev);
+			toAddNode.setNext(current);
+			this.size++;
+		}
+	}
+		
+	
+	//remove node at specified index 
+	public void removeNode(int index) {
+		DListNode toDelete = getNode(index);
+		DListNode prev = toDelete.getPrev();
+		DListNode next = toDelete.getNext();
+		
+		//unLink Node at specific index
+		prev.setNext(next);
+		next.setPrev(prev);
+		toDelete.setNext(null);
+		toDelete.setPrev(null);
+		this.size--;
+	}
+	
+	//print out List by iterate over List appending each item to StringBuilder Object
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Items in Linked List: [ ");
+		
+		DListNode current = header.getNext();
+		while (current.getNext() != null) {
+			sb.append(current.getItem());
+			sb.append(", ");
+			current = current.getNext(); //increment
+		}
+		sb.append("  ]");
+		String listItems = sb.toString();
+		return listItems;
+	}
+} //end DList Class
+	

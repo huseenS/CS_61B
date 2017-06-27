@@ -1,0 +1,10 @@
+activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:OpenCommercial,org.eclipse.launchbar.core.descriptorType.default\:Fraction,org.eclipse.launchbar.core.descriptorType.default\:ListTester,org.eclipse.launchbar.core.descriptorType.default\:New_Test_Config,org.eclipse.launchbar.core.descriptorType.default\:DListTester,org.eclipse.launchbar.core.descriptorType.default\:HomeWork3
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:DListTester/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:DListTester/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Fraction/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Fraction/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local
+org.eclipse.launchbar.core.descriptorType.default\:ListTester/activeLaunchMode=alternate
+org.eclipse.launchbar.core.descriptorType.default\:New_Test_Config/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:OpenCommercial/activeLaunchMode=run
