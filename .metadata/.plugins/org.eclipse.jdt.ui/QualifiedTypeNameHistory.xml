@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Homework2.SList"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.nio.channels.IllegalSelectorException"/>
@@ -10,6 +9,17 @@
 <fullyQualifiedTypeName name="Lab2.DList"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="Lab2.DList.DListNode"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.Current"/>
+<fullyQualifiedTypeName name="HomeWork3.SListNode"/>
+<fullyQualifiedTypeName name="labSix.BadTransactionException"/>
+<fullyQualifiedTypeName name="labSix.BadAccountException"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="homework5.DListNode"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="chainedHashTable.hashEntry"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="lists.ISLinkNode"/>
+<fullyQualifiedTypeName name="BTree.DoubleLinkList"/>
+<fullyQualifiedTypeName name="BTree.KeyValuePair"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,36 @@
+1. Queues and stacks can be thought of as specializations of lists that restrict which elements can be accessed.
+1a. What are the restrictions for a queue?
+
+1b. What are the restrictions for a stack?
+
+2. We have looked at lists backed by arrays and links in this class. Under what circumstances might we prefer to use a list backed by links rather than an array? (Your argument should include asymptotic complexity).
+
+
+3. Give the asymptotic complexity for the following operations on an array backed list. Also provide a brief explanation for why the asymptotic complexity is correct.
+
+3a. Appending a new value to the end of the list.
+
+3b. Removing a value from the middel of the list.
+
+3c. Fetching a value by list index.
+
+4. Give the asymptotic complexity for the following operations on a doubly linked list. Also provide a brief explanation for why the asymptotic complexity is correct.
+
+4a. Appending a new value to the end of the list.
+
+4b. Removing the value last fetched from the list.
+
+4c. Fetching a value by list index.
+
+5. One of the operations we might like a data structure to support is an operation to check if the data structure already contains a particular value.
+
+5a. Given an unsorted populated array list and a value, what is the time complexity to determine if the value is in the list? Please explain your answer.
+
+5b. Is the time complexity different for a linked list? Please explain your answer.
+
+5c. Given a populated binary search tree, what is the time complexity to determine if the value is in the tree? Please give upper and lower bound with an explanation of your answer.
+
+5d. If the binary search tree is guaranteed to be complete, does the upper bound change? Please explain your answer.
+
+6. A dictionary uses arbitrary keys retrieve values from the data structure. We might implement a dictionary using a list, but would have O(n) time complexity for retrieval. Since we expect retrieval to occur more frequently than insertion, a list seems like a poor choice. 
+Could we get better performance implementing a dictionary using a binary search tree? Explain your answer.

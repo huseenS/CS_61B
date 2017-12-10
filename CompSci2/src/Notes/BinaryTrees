@@ -1,0 +1,70 @@
+Invariants:
+    A statement that remains true beforea and after some operation--constrains operations on bst
+
+Dictionary Implementation:
+    Doubly Linked list backed
+    Key Value pairs
+    operations: Add to dictionary, fetch, update value for key, remove value
+    
+    Add: add to end of linked list
+    fetch: doesn't mutate
+    update: changes value
+    remove: DeLinks from list
+        
+
+Binary Tree:
+    finite set of elements called nodes, either empty or consisting of root together with two left and right subtrees that are disjoint
+    Edge from a node to each of it's children, node's are parents of their children
+    Path: sequence of nodes in tree from n1 to nk, length of path is k-1
+    Ancestor: Path from node R to node M then R is the ancestor of M, M is descendant of R
+    Depth of a node is the length of the path from root to that node, height of a tree is depth + 1
+    Leaf Nodes have two empty children
+    Full BTree: Each node is either an internal node with two non empty children or a leaf
+    Complete BTree: restricted in that it must fill the tree by levels from left to right, in a tree with height d 
+        all levels are filled except possibly d-1. bottom  is filled in from left side. --wide as possible
+        
+Binary Search Tree:
+    height of a tree = log 2 nodes, 2^n nodes
+    A node may have up to two children
+    all descendants in the left subtree must be less than right subtree--must hold recursively
+    all descendants in the right subtree must be greater than the root--must hold recursively
+    Operations that mutate tree must maintain the order--insert, remove
+    
+    Common Traversals: all recursive
+    Pre-Order: Start at root, traverse the children of subtrees
+        call print self first, call print left child, call print right child
+    Post-Oder: Visit the children, then their parents--reverse polish notation
+        call print on left child, call print on right child, call print on self
+    In-Order: Left most child, then it's parent, then right child--infix notation
+        call print on left child, call print on parent, call print right child
+    Removal:
+    
+    
+Array backed List:
+    Start at average of highest-lowest index/2
+    move the average again by highest-lowest index/2
+    
+ 
+ Heap or priority queue Invariants:
+    a node may have at most two children
+    all descendants in left subtree must greater than children
+    all descendants in the right subtree must be greater than children
+    useful for sorting arrays, heaps are backed by arrays usually
+    insertion and deletion are both logn best case
+        invalidate the heap by adding to bottom most location
+            then use swaps constant time operations: Check parent < toInsert then swap
+            
+        
+ 
+ Dictionary backed by tree needs to implement comparable interface in order to use .compareTo
+ 
+ 
+ 
+
+    
+    
+    
+    
+    
+    
+    

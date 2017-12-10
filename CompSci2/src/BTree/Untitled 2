@@ -1,0 +1,129 @@
+import java.util.*;
+
+public class Map<KeyType, ValueType> extends List<KeyType, ValueType>
+{
+
+   public int size()
+   {
+      return(N);
+   }
+
+   public boolean isEmpty()
+   {
+      return(N==0);
+   }
+
+   public ValueType get(KeyType k)
+   {
+      ListElem<KeyType, ValueType> p;
+
+      for ( p = head; p != null; p = p.next )
+      {
+      if ( p.key.equals( k ) )
+         return( p.value );
+      }
+
+      return(null);
+   }
+
+   public ValueType put(KeyType k, ValueType v)
+   {
+      ListElem<KeyType, ValueType> p;
+      ValueType old;
+
+      for ( p = head; p != null; p = p.next )
+      {
+          if ( p.key.equals( k ) )
+      {
+         old = p.value;
+             p.value = v;         // Replace old value
+
+         return( old );
+      }
+      }
+
+      /* -------------------------------
+     Not found, insert new entry
+     ------------------------------- */
+      p = new ListElem<KeyType, ValueType> (k, v);
+
+      insert(p);
+
+      return(null);
+   }
+
+   public ValueType remove(KeyType k)
+   {
+      ListElem<KeyType, ValueType> p;
+      ValueType old;
+
+      for ( p = head; p != null; p = p.next )
+      {
+          if ( p.key.equals( k ) )
+          {
+             old = p.value;
+
+             delete(p);     // Delete element
+      
+         return(old);   // Return old value
+          }
+      }
+
+      return(null);     // Return "not found"
+   }
+
+
+   public Iterable<KeyType> keySet()
+   {
+      LinkedList<KeyType> r = new LinkedList<KeyType>();   
+                     // One of the classes that implements
+                     // "Iterable" is LinkedList
+
+      ListElem<KeyType, ValueType> p;
+
+      for ( p = head; p != null; p = p.next )
+      {
+          r.add( p.key );
+      }
+
+      return(r);             
+   }
+
+   public Iterable<ValueType> values()
+   {
+      LinkedList<ValueType> r = new LinkedList<ValueType>(); 
+                     // One of the classes that implements
+                                     // "Iterable" is LinkedList
+
+      ListElem<KeyType, ValueType> p;
+
+      for ( p = head; p != null; p = p.next )
+      {
+          r.add( p.value );
+      }
+
+      return(r);             
+   }
+
+
+   public Iterable<ListElem<KeyType, ValueType>> entrySet()
+   {
+      LinkedList<ListElem<KeyType, ValueType>> r 
+        = new LinkedList<ListElem<KeyType, ValueType>>(); 
+                     // One of the classes that implements
+                                     // "Iterable" is LinkedList
+
+      ListElem<KeyType, ValueType> p;
+
+      for ( p = head; p != null; p = p.next )
+      {
+          r.add( p );
+      }
+
+      return(r);             
+   }
+
+
+
+
+}

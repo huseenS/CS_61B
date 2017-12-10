@@ -1,0 +1,5 @@
+package BinarySearchTree;
+
+interface BinaryTree {
+
+}

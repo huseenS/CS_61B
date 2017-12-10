@@ -127,7 +127,7 @@ public class SList {
 			if (next.item.equals(currentNode.item)) {
 				System.out.print(currentNode.item + " equals " + next.item);
 				//unlink next node
-				SListNode toDelete = next; //store next in temp previous
+				SListNode toDelete = next; //store next in temp
 				currentNode.next = next.next; //update current pointer
 				toDelete.next = null; //remove toDelete by unlinking it
 				next = currentNode.next; //update next

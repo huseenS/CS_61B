@@ -1,0 +1,44 @@
+Complexity, BST, Heaps
+Height of a Tree: 
+Max # of Nodes = 2^d-1
+
+
+Binary Search Tree Remove
+
+Remove Cases:
+    find minNode and it's parent
+    parent=null;
+    If Node toDelete has no children-remove it.
+    If node toDelete has one child, replace it with that child
+    If Node has two children:
+        and not root
+        save toSwaps parent
+        go right, find min on right subtree by going left until you can't, 
+        delete min by setting leftmost parent to the right child
+            toSwapParent set left to toDelete right
+            toSwap set left to current's left
+            toSwap set right to current's right
+            if parent's right is current, parent set right to swap node, else set left to toSwap
+        if Root
+         
+ insert:
+    recursively insert if not root
+    if root--make new root
+    else call insertHelp
+    Insert help
+        does new node fit as direct child: If k<curren key && no left child or K>current key and no right child
+            if left, set left
+            else right, insert right
+            return
+        Place node with one of the children
+            if k<current set current to current's left
+            else k>current set current to current's right
+            call insert help
+
+fetch key:
+    start at root
+    if k < current key--set current to right
+    if k> current key--set current to left 
+    return
+    
+    
